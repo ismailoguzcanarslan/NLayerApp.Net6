@@ -6,7 +6,7 @@ namespace NLayer.Core.Repositories
     {
         Task<T> GetById(int id);
 
-        IEnumerable<T> GetAll(Expression<Func<T, bool>> expression);
+        IQueryable<T> GetAll(Expression<Func<T, bool>> expression);
 
         IQueryable<T> Where(Expression<Func<T, bool>> expression);
 
@@ -20,6 +20,6 @@ namespace NLayer.Core.Repositories
 
         void Remove(T entity);
 
-        void RemoveRange(T entity);
+        void RemoveRange(IEnumerable<T> entity);
     }
 }
